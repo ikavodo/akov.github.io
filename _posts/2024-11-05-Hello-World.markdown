@@ -62,9 +62,7 @@ def hello_world():
 
 ---
 
-## Paragraph modifiers
-
-### Quote
+## Quote
 
 > <strong>"Hello World"</strong>  
 > — Someone

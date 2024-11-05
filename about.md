@@ -4,9 +4,10 @@ layout: page
 ---
 ![Profile Image]({% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %})
 
-<p>Hi I'm Ido!</p>
+<p>Hi I'm Ido! I'm a classical musician and computer scientist. I started this website to write about my current explorations into the world of DSP. 
+Look into my blog to start reading about some my latest technological and mathematical excursions! </p>
 
-<h2>Skills</h2>
+<!-- <h2>Skills</h2> -->
 
 <ul class="skill-list">
 <!-- 	<li>HTML - Jade - Haml - Erb</li>
@@ -24,7 +25,8 @@ layout: page
 	<li>TDD e Continuous Integration</li> -->
 </ul>
 
-<h2>Projects</h2>
+<!-- <h2>Projects</h2> -->
+
 
 <ul>
 <!-- 	<li><a href="https://github.com/">Lorem Lorem</a></li>

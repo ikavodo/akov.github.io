@@ -4,8 +4,9 @@ layout: page
 ---
 ![Profile Image]({% if site.external-image %}{{ site.picture }}{% else %}{{ site.url }}/{{ site.picture }}{% endif %})
 
-<p>Hi I'm Ido! I'm a classical musician and computer scientist. I started this website to write about my current explorations into the world of DSP. 
-Look into my blog to start reading about some my latest technological and mathematical excursions! </p>
+<p>Hi I'm Ido! I'm a classical musician and computer scientist. I started this website to write about my current explorations into the world of DSP, though I may 
+find myself writing about unrelated things (mostly musical) in the near future! If that happens- then please accept my sincere apology. 
+Look into my blog to read about my latest excursions! </p>
 
 <!-- <h2>Skills</h2> -->
 

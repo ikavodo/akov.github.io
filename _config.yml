@@ -40,9 +40,10 @@ disqus:
 # instagram: myinstagram
 # pinterest: mypinterest
 linkedin: https://www.linkedin.com/in/ido-akov-078289309/
-# youtube: myyoutube
+youtube: https://www.youtube.com/@ikavodo
 # spotify: myspotify
 github: ikavodo
+soundcloud: https://soundcloud.com/ikavodo
 # gitlab: mygitlab
 # lastfm: mylastfm
 # stackoverflow: 7044681/mystackoverflow
@@ -52,7 +53,7 @@ github: ikavodo
 email: ikavodo@gmail.com
 
 authors:
-    Yotam:
+    Ido:
         name: Ido Akov
         bio: bio
         external-image: false

@@ -1,4 +1,5 @@
 # main text of home
+title: Ido Akov  # or whatever you want as your site title
 name: Ido Akov
 bio: 
 
@@ -40,7 +41,7 @@ disqus:
 # instagram: myinstagram
 # pinterest: mypinterest
 linkedin: ido-akov-078289309
-youtube: https://www.youtube.com/@ikavodo
+youtube: ikavodo
 # spotify: myspotify
 github: ikavodo
 soundcloud: https://soundcloud.com/ikavodo

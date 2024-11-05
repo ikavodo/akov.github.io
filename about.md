@@ -9,12 +9,14 @@ find myself writing about unrelated things (mostly musical) in the near future! 
 Anyway, see what I'm up to in the blog section, if that is what interests you! </p>
 
 <h2>Music</h2>
-My original musical works and performances can be found on:
+My original musical compositions, as well as performances of works by others can be found on:
 
 <ul class="skill-list">
     <li><a href="https://idoakov.bandcamp.com/" target="_blank">Bandcamp </a></li>
     <li><a href="https://soundcloud.com/ikavodo" target="_blank">Soundcloud </a></li>
     <li><a href="https://www.youtube.com/ikavodo" target="_blank">Youtube </a></li>
+    <li><a href="https://open.spotify.com/artist/4wPdLdkPNnZavwMvWtv2bg?si=b84m1Y2vSqmaUSgJFZlCjA" target="_blank">Spotify </a></li>
+
     </ul>
 
 <!-- <h2>Projects</h2> -->

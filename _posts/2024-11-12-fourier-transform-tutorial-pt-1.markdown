@@ -197,7 +197,7 @@ $$\delta[n-n_0]\overset{\text{F}}{\leftrightarrow}e^{-j\omega n_0}*1=e^{-j\omega
 </div>
 Meaning we now have a general interpretation of the IDTFT as a time-shifted version of the original problem
 <div>
-$$\int_{-\pi}^{\pi} X(e^{j\omega})e^{j\omega n_0}d\omega=\int_{-\pi}^{\pi} (\sum_{n=-\infty}^{\infty}x[n]e^{-j\omega n})e^{j\omega n_0}d\omega \overset{\text{flip order}}{=} \sum_{n=-\infty}^{\infty} x[n]  (\int_{-\pi}^{\pi}e^{j\omega(n_0-n)})d\omega \\ \overset{\text{time-shift}}{=} 
+$$\int_{-\pi}^{\pi} X(e^{j\omega})e^{j\omega n_0}d\omega \overset{\text{DTFT}}{=} \int_{-\pi}^{\pi} (\sum_{n=-\infty}^{\infty}x[n]e^{-j\omega n})e^{j\omega n_0}d\omega \overset{\text{flip order}}{=} \sum_{n=-\infty}^{\infty} x[n]  (\int_{-\pi}^{\pi}e^{j\omega(n_0-n)})d\omega \\ \overset{\text{time-shift}}{=} 
 \sum_{n=-\infty}^{\infty} x[n]  (2\pi\delta[n_0-n]) = 2\pi x[n_0]$$.
 </div>
 

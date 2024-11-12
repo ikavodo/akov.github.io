@@ -162,7 +162,7 @@ A useful theorem for Fourier transforms defined over the same time/frequency dom
 $$X(t)\overset{\text{F}}{\leftrightarrow}2\pi x(-jw)$$,
 </div>
 meaning we can interpret the frequency-domain representation $X(e^{jw})$ as a time-domain representation and then take the Fourier transform of this- resulting in a scaled, time-reversed version of the time-domain representation (exercise for the reader: what would taking 4 consecutive DTFTs of an initial sequence x[n] result in?). This theorem also explains the relationship between the previously presented convolution and modulation theorems: the two are dual operators.
-While the DTFT is a bit problematic in this sense, in that the time-domain is discrete and the frequency domain continuous, we can bypass this by using a little trick: let's define 
+While the DTFT is a bit problematic in the sense that the time-domain is discrete and the frequency domain continuous, we can bypass this by using a little trick: let's define 
 
 <div>
 $$DTFT\{X(e^{j\omega})\} = \int_{-\pi}^{\pi} X(e^{j\omega}) e^{-j\omega n} d\omega$$,

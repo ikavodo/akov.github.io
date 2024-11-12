@@ -72,7 +72,7 @@ $$\int_{-\pi}^{\pi} X(e^{j\omega})d\omega=\int_{-\pi}^{\pi} (\sum_{n=-\infty}^{\
 
 Now let's make some sense of that integral in two different ways, the first 'naive' (with zero-initial knowledge) and the second informed (using Fourier Transform properties).
 
-## The 'naive' way
+## The naive way
 
 The indefinite integral of $\( e^{-j \omega n} \)$ with respect to $\omega$ is:
 
@@ -137,7 +137,7 @@ $$\delta[n] =
 </div>.
 The resulting sequence is so basic- could there have there an easier way to compute it?
 
-## The 'informed' way
+## The informed way
 Fourier analysis is generally done by utilizing certain mathematical properties of Fourier transforms, together with some well-known pairs of sequences/functions under such transforms.
 The most basic such pair in the DTFT case $\delta[n]\overset{\text{F}}{\leftrightarrow}1$, which is obvious because 
 <div>

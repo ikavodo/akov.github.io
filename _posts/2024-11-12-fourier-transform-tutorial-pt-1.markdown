@@ -54,7 +54,7 @@ What's that integral about? Hopefully we'll have a simpler interpretation of it 
 
 ## A simple (yet illuminating) problem
 
-The following problem from Mitra's book was an eye-opener for me regarding the IDTFT, and thus feels worth sharing. 
+The following problem from Mitra's book was an eye-opener for me regarding the IDTFT, and thus felt worth sharing. 
 
 The problem is as such: let $X(e^{jw})$ denote the DTFT of a sequence x[n].
 Evaluate $\int_{-\pi}^{\pi} X(e^{j\omega})d\omega$.
@@ -139,7 +139,7 @@ The resulting sequence is so basic- could there have there an easier way to comp
 
 ## The informed way
 Fourier analysis is generally done by utilizing certain mathematical properties of Fourier transforms, together with some well-known pairs of sequences/functions under such transforms.
-The most basic such pair in the DTFT case $\delta[n]\overset{\text{F}}{\leftrightarrow}1$, which is obvious because 
+The most basic such pair in the DTFT case is $\delta[n]\overset{\text{F}}{\leftrightarrow}1$, which is obvious because 
 <div>
 $$\sum_{n=-\infty}^{\infty} \delta[n] e^{-j\omega n} = e^{-j\omega 0} = 1$$
 </div>
@@ -149,7 +149,7 @@ $$x[n]\circledast h[n]\overset{\text{F}}{\leftrightarrow}X(e^{jw})H(e^{jw})$$
 </div>
 In the case of h[n] = $\delta[n]$, we know it is the identity element for the convolution operator, meaning $x[n]\circledast \delta[n]=x[n]$, and it must thus translate to the identity of the multiplication operator in the frequency domain, meaning $H(e^{jw})=1$.
 
-> Note: we can prove the same result by using the dual modulation theorem
+> Note: we can prove the same result by using the modulation theorem
 <div>
 $$x[n]h[n]\overset{\text{F}}{\leftrightarrow}\frac{1}{2\pi}\int_{-\pi}^{\pi}X(e^{j\theta})H(e^{j(w-\theta)} d\theta),$$
 </div> 
@@ -161,7 +161,7 @@ A useful theorem for Fourier transforms defined over the same time/frequency dom
 <div>
 $$X(t)\overset{\text{F}}{\leftrightarrow}2\pi x(-jw)$$,
 </div>
-meaning we can interpret the frequency-domain representation $X(e^{jw})$ as a time-domain representation and then take the Fourier transform of this- resulting in a scaled, time-reversed version of the time-domain representation (exercise for the reader: what would taking 4 consecutive DTFTs of an initial sequence x[n] result in?). 
+meaning we can interpret the frequency-domain representation $X(e^{jw})$ as a time-domain representation and then take the Fourier transform of this- resulting in a scaled, time-reversed version of the time-domain representation (exercise for the reader: what would taking 4 consecutive DTFTs of an initial sequence x[n] result in?). This theorem also explains the relationship between the previously presented convolution and modulation theorems: the two are dual operators.
 While the DTFT is a bit problematic in this sense, in that the time-domain is discrete and the frequency domain continuous, we can bypass this by using a little trick: let's define 
 
 <div>

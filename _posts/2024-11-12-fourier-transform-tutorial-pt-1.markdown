@@ -15,16 +15,16 @@ description: "Fourier Transform tutorial: pt.1"
 ---
 
 ## Introduction
-If there's one thing the internet is full of (except for [cats](https://www.youtube.com/watch?v=Of2HU3LGdbo&pp=ygUQc2hhcmsgY2F0IHJvb21iYQ%3D%3D)) it's tutorials about the Fourier Transform. Some of these are [really well done](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/), so why should anyone bother write more blog posts about the topic? 
-In my case, the answer is quite selfish: I'm currently studying DSP into depth via Sanjit Mitra's great book ["Digital signal processing: a computer-based approach"](https://www.mathworks.com/academia/books/digital-signal-processing-mitra.html), and I want some vehicle to test my deeper understanding of the underlying concepts, beyond solving the exercises in the book (of which there are many). What better way to do so than by trying to mediate my understanding to an external reader?
+If there's one thing the internet is full of (except for [cats](https://www.youtube.com/watch?v=Of2HU3LGdbo&pp=ygUQc2hhcmsgY2F0IHJvb21iYQ%3D%3D)) it's tutorials about the Fourier Transform. Some of these are [really well done](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/), so why should anyone bother to write more blog posts about the topic? \\
+In my case, the answer is quite selfish: I'm currently studying DSP into depth via Sanjit Mitra's great book ["Digital signal processing: a computer-based approach"](https://www.mathworks.com/academia/books/digital-signal-processing-mitra.html), and I want some vehicle to test my deeper understanding of the underlying concepts, beyond solving the (many) exercises in the book. What better way to do so than by trying to mediate my understanding to an external reader?
 
 ---
 
-## Discrete time Fourier transform (DTFT) Basics
+## The basics
 
 ### Discrete-Time Fourier Transform (DTFT)
 
-Let's start with some definitions. Let x[n] be some sequence (if x[n] is finite- we extend it infinitely in each direction by zero-padding). The Discrete-Time Fourier Transform (DTFT) of a discrete-time signal x[n' is given by the following formula:
+Let's start with some definitions. Let x[n] be some sequence (if x[n] is finite- we extend it infinitely in each direction by zero-padding). The Discrete-Time Fourier Transform (DTFT) of a discrete-time signal x[n] is given by the following formula:
 
 <div>
 $$X(e^{j\omega}) = \sum_{n=-\infty}^{\infty} x[n] e^{-j\omega n}, \quad \omega \in [-\pi, \pi]$$
@@ -38,7 +38,7 @@ Where:
 
 ### Inverse Discrete-Time Fourier Transform (IDTFT)
 
-The Inverse Discrete-Time Fourier Transform (IDTFT) allows us to recover the original signal x[n] from its DTFT $X(e^{j\omega})$ and is given by:
+The Inverse Discrete-Time Fourier Transform (IDTFT) allows us to recover the original signal x[n] from its $DTFT \, X(e^{j\omega})$ and is given by:
 
 <div>
 $$x[n] = \frac{1}{2\pi} \int_{-\pi}^{\pi} X(e^{j\omega}) e^{j\omega n} d\omega$$
@@ -46,15 +46,15 @@ $$x[n] = \frac{1}{2\pi} \int_{-\pi}^{\pi} X(e^{j\omega}) e^{j\omega n} d\omega$$
 
 Where:
 - x[n] is the original discrete-time signal.
-- The integral is taken over the specified frequency range, which can also be defined simply as $R = [\omega_0,\omega_0+2\pi]$, making the IDTFT integral $\int_{\omega\in R}$.
+- The integral is taken over the specified frequency range, which can also be defined simply as $R = [\omega_0,\omega_0+2\pi]$, making the integral $\int_{\omega\in R}$.
 
 What's that integral about? Hopefully we'll have a simpler interpretation of things later.
 
 ---
 
-## A simple, yet illuminating problem
+## A simple (yet illuminating) problem
 
-The following problem from Mitra's book was quite illuminating for me, in that it gave me a deeper understanding and interpretation of the IDTFT specifically. 
+The following problem from Mitra's book was an eye-opener for me, and thus feels worth sharing. 
 
 The problem is as such: let $X(e^{jw})$ denote the DTFT of a sequence x[n].
 Evaluate $\int_{-\pi}^{\pi} X(e^{j\omega})d\omega$.
@@ -70,7 +70,7 @@ Let's try as an initial step to "open up" each $X(e^{j\omega})$ by representing 
 $$\int_{-\pi}^{\pi} X(e^{j\omega})d\omega=\int_{-\pi}^{\pi} (\sum_{n=-\infty}^{\infty}x[n]e^{-j\omega n})d\omega \overset{\text{flip order}}{=} \sum_{n=-\infty}^{\infty} x[n]  (\int_{-\pi}^{\pi}e^{-j\omega n})d\omega$$.
 </div>
 
-Now let's make some sense of that integral in two different ways, the first a bit 'naive' (knowing nothing about Fourier transforms) and the second less so.
+Now let's make some sense of that integral in two different ways, the first 'naive' (with zero-initial knowledge) and the second informed (using Fourier Transform properties).
 
 ## The 'naive' way
 
@@ -90,7 +90,7 @@ I[n] = \left[ \frac{e^{-j \omega n}}{-j n} \right]_{-\pi}^{\pi} = \frac{e^{-j \p
 $$
 </div>
 
-Where I[n] is a sequence because we suppose n is an integer (remember the summation over n in the DTFT calculation!).
+Where I[n] is a sequence because we suppose n is an integer (remember the summation over n in the DTFT calculation).
 
 This can be simplified using Euler's formula:
 
@@ -149,7 +149,7 @@ $$x[n]\circledast h[n]\overset{\text{F}}{\leftrightarrow}X(e^{jw})H(e^{jw})$$
 </div>
 In the case of h[n] = $\delta[n]$, we know it is the identity element for the convolution operator, meaning $x[n]\circledast \delta[n]=x[n]$, and it must thus translate to the identity of the multiplication operator in the frequency domain, meaning $H(e^{jw})=1$.
 
-> Note: we can prove the same result by using the modulation theorem
+> Note: we can prove the same result by using the dual modulation theorem
 <div>
 $$x[n]h[n]\overset{\text{F}}{\leftrightarrow}\frac{1}{2\pi}\int_{-\pi}^{\pi}X(e^{j\theta})H(e^{j(w-\theta)} d\theta),$$
 </div> 
@@ -157,51 +157,49 @@ $$x[n]h[n]\overset{\text{F}}{\leftrightarrow}\frac{1}{2\pi}\int_{-\pi}^{\pi}X(e^
 
 
 ### The duality theorem
-A useful theorem of Fourier transforms defined over the same time/frequency domain (be it continuous or discreet) is the duality theorem, whereby
+A useful theorem for Fourier transforms defined over the same time/frequency domain (be it continuous or discreet) is the duality theorem, whereby
 <div>
 $$X(t)\overset{\text{F}}{\leftrightarrow}2\pi x(-jw)$$,
 </div>
-meaning can interpret the frequency-domain representation $X(e^{jw})$ as a time-domain representation and then take the Fourier transform of this, resulting in a scaled, time-reversed version of the time-domain representation. While the DTFT is a bit problematic in this sense (in that the time-domain is discrete and the frequency domain continuous), we can bypass this by using a little trick: let's define 
+meaning we can interpret the frequency-domain representation $X(e^{jw})$ as a time-domain representation and then take the Fourier transform of this- resulting in a scaled, time-reversed version of the time-domain representation. While the DTFT is a bit problematic in this sense (in that the time-domain is discrete and the frequency domain continuous), we can bypass this by using a little trick: let's define 
 
 <div>
-$$DTFT\{X(e^{j\omega})\} = \int_{-\pi}^{\pi} X(e^{j\omega}) e^{-j\omega n} d\omega$$
+$$DTFT\{X(e^{j\omega})\} = \int_{-\pi}^{\pi} X(e^{j\omega}) e^{-j\omega n} d\omega$$,
 </div>
-That's our mystery integral! Huh. Let's use it to prove the duality theorem for the DTFT.
+and use it to prove the duality theorem for the DTFT.
 
 <div>
 $$\int_{-\pi}^{\pi} X(e^{j\omega}) e^{-j\omega n} d\omega = 2\pi(\frac{1}{2\pi}\int_{-\pi}^{\pi} X(e^{j\omega}) e^{j\omega(-n)} d\omega) \overset{\text{IDTFT}}{=} 2\pi x[-n]$$
 </div>
-Finally, we can use our first DTFT pair $\delta[n]\overset{\text{DTFT}}{\leftrightarrow}1$ to solve the mystery integral
+Finally, we can use the DTFT pair $\delta[n]\overset{\text{DTFT}}{\leftrightarrow}1$ to solve the mystery integral
 <div>
-$$\int_{-\pi}^{\pi}e^{-j\omega n} d\omega = \int_{-\pi}^{\pi}1e^{-j\omega n} d\omega = 2\pi(\frac{1}{2\pi}\int_{-\pi}^{\pi} 1e^{j\omega(-n)} d\omega) \overset{\text{IDTFT}}{=} 2\pi\delta[-n]=2\pi\delta[n]$$,
+$$\int_{-\pi}^{\pi}e^{-j\omega n} d\omega = \int_{-\pi}^{\pi}1e^{-j\omega n} d\omega = 2\pi(\frac{1}{2\pi}\int_{-\pi}^{\pi} 1e^{j\omega(-n)} d\omega) \overset{\text{IDTFT}}{=} 2\pi\delta[-n]\overset{\text{is even}}{=}2\pi\delta[n]$$,
 </div> giving us the same result as previously.
-
-What have we learned so far? That we can interpret the integral $\int_{-\pi}^{\pi}e^{-j\omega n} d\omega$ as the DTFT operator over the frequency-domain representation $X(e^{jw})=1$, thus yielding the scaled original time-domain sequence $2\pi\delta[n]$. 
-
-## The time-shift theorem
 
 Going back now to the original problem we have 
 <div>
-$$\sum_{n=-\inf}^{\inf} x[n]  (\int_{-\pi}^{\pi}e^{-j\omega n})d\omega = \sum_{n=-\inf}^{\inf} x[n]  (2\pi\delta[n]) = 2\pi x[0]$$
+$$\sum_{n=-\infty}^{\infty} x[n]  (\int_{-\pi}^{\pi}e^{-j\omega n})d\omega = \sum_{n=-\infty}^{\infty} x[n]  (2\pi\delta[n]) = 2\pi x[0]$$
 </div>
-Which means the problem is basically solved. But can we perhaps learn from this something more general about the IDTFT?
+What have we learned so far? That we can interpret the integral $\int_{-\pi}^{\pi}e^{-j\omega n} d\omega$ as the DTFT operator over the frequency-domain representation $X(e^{jw})=1$, thus yielding the scaled original time-domain sequence $2\pi\delta[n]$. But can we learn something more about the IDTFT thanks to this toy example?
 
 
-An additional theorem of Fourier transforms which will prove useful for this discussion is the time-shift theorem 
+## The time-shift theorem
+
+Another theorem relating to Fourier transforms which will prove useful for this purpose is the time-shift theorem 
 <div>
 $$g[n-n_0]\overset{\text{F}}{\leftrightarrow}e^{-j\omega n_o}X(e^{j\omega})$$,
 </div>
 
-which intuitively establishes a relationship between a time-shift in the time-domain and a phase-shift in the frequency domain. We can use this to verify that 
+which intuitively establishes a relationship between a time-shift in the time-domain and a phase-shift in the frequency domain. We can use this theorem to verify that 
 <div>
 $$\delta[n-n_0]\overset{\text{F}}{\leftrightarrow}e^{-j\omega n_0}*1=e^{-j\omega n_0}$$,
 </div>
-Meaning we now have a general interpretation of the IDTFT as a time-shifted version of our original problem
+Meaning we now have a general interpretation of the IDTFT as a time-shifted version of the original problem
 <div>
 $$\int_{-\pi}^{\pi} X(e^{j\omega})e^{j\omega n_0}d\omega=\int_{-\pi}^{\pi} (\sum_{n=-\infty}^{\infty}x[n]e^{-j\omega n})e^{j\omega n_0}d\omega \overset{\text{flip order}}{=} \sum_{n=-\infty}^{\infty} x[n]  (\int_{-\pi}^{\pi}e^{j\omega(n_0-n)})d\omega \\ \overset{\text{time-shift}}{=} 
 \sum_{n=-\infty}^{\infty} x[n]  (2\pi\delta[n_0-n]) = 2\pi x[n_0]$$.
 </div>
-Mitra's problem then in essence introduces the duality between summation over the time and frequency domain representations, and makes clear that the IDTFT is nothing more than a phase-shifted summation, which is equivalent to a time-shifted unit sequence "plucking" out the relevant index from the time-domain representation x[n].
+To conclude: Mitra's seemingly innocent problem emphasizes the duality between summation over the time and frequency domain representations, which is an inherent property of the Fourier Transform. Under this interpretation- the IDTFT becomes nothing more than a phase-shifted summation equivalent to "plucking" out the relevant index from the time-domain representation x[n] via a time-shifted unit sequence. 
 
 That's it for now!
 

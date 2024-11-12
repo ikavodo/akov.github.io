@@ -54,7 +54,7 @@ What's that integral about? Hopefully we'll have a simpler interpretation of thi
 
 ## A simple (yet illuminating) problem
 
-The following problem from Mitra's book was an eye-opener for me, and thus feels worth sharing. 
+The following problem from Mitra's book was an eye-opener for me regarding the IDTFT, and thus feels worth sharing. 
 
 The problem is as such: let $X(e^{jw})$ denote the DTFT of a sequence x[n].
 Evaluate $\int_{-\pi}^{\pi} X(e^{j\omega})d\omega$.

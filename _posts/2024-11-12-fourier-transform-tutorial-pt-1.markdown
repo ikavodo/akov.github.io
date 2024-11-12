@@ -177,7 +177,7 @@ Finally, we can use the DTFT pair $\delta[n]\overset{\text{DTFT}}{\leftrightarro
 $$\int_{-\pi}^{\pi}e^{-j\omega n} d\omega = 2\pi(\frac{1}{2\pi}\int_{-\pi}^{\pi} 1e^{j\omega(-n)} d\omega) \overset{\text{IDTFT}}{=} 2\pi\delta[-n]\overset{\text{is even}}{=}2\pi\delta[n]$$,
 </div> giving us the same result as previously.
 
-Going back now to the original problem we have 
+Going back now to the original problem we have once more
 <div>
 $$\sum_{n=-\infty}^{\infty} x[n]  (\int_{-\pi}^{\pi}e^{-j\omega n})d\omega = \sum_{n=-\infty}^{\infty} x[n]  (2\pi\delta[n]) = 2\pi x[0]$$
 </div>

@@ -48,7 +48,7 @@ Where:
 - x[n] is the original discrete-time signal.
 - The integral is taken over the specified frequency range, which can also be defined simply as $R = [\omega_0,\omega_0+2\pi]$, making the integral $\int_{\omega\in R}$.
 
-What's that integral about? Hopefully we'll have a simpler interpretation of things later.
+What's that integral about? Hopefully we'll have a simpler interpretation of it later.
 
 ---
 

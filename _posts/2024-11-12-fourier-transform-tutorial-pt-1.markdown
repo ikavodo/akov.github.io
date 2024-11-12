@@ -141,9 +141,9 @@ The resulting sequence is so basic- could there have there an easier way to comp
 Fourier analysis is generally done by utilizing certain mathematical properties of Fourier transforms, together with some well-known pairs of sequences/functions under such transforms.
 The most basic such pair in the DTFT case $\delta[n]\overset{\text{F}}{\leftrightarrow}1$, which is obvious because 
 <div>
-$$\sum_{n=-\infty}^{\infty} \delta[n] e^{-j\omega n} = \sum_{n=0} e^{-j\omega 0} = 1$$
+$$\sum_{n=-\infty}^{\infty} \delta[n] e^{-j\omega n} = e^{-j\omega 0} = 1$$
 </div>
-A useful way to verify this is via the convolution theorem, which states
+This can easily be verified via the convolution theorem, which states
 <div>
 $$x[n]\circledast h[n]\overset{\text{F}}{\leftrightarrow}X(e^{jw})H(e^{jw})$$
 </div>
@@ -161,7 +161,9 @@ A useful theorem for Fourier transforms defined over the same time/frequency dom
 <div>
 $$X(t)\overset{\text{F}}{\leftrightarrow}2\pi x(-jw)$$,
 </div>
-meaning we can interpret the frequency-domain representation $X(e^{jw})$ as a time-domain representation and then take the Fourier transform of this- resulting in a scaled, time-reversed version of the time-domain representation. While the DTFT is a bit problematic in this sense (in that the time-domain is discrete and the frequency domain continuous), we can bypass this by using a little trick: let's define 
+meaning we can interpret the frequency-domain representation $X(e^{jw})$ as a time-domain representation and then take the Fourier transform of this- resulting in a scaled, time-reversed version of the time-domain representation. 
+< Suggestion to the reader: what would taking 4 consecutive DTFTs of an initial sequence x[n] result in (use the duality theorem)? 
+While the DTFT is a bit problematic in this sense (in that the time-domain is discrete and the frequency domain continuous), we can bypass this by using a little trick: let's define 
 
 <div>
 $$DTFT\{X(e^{j\omega})\} = \int_{-\pi}^{\pi} X(e^{j\omega}) e^{-j\omega n} d\omega$$,

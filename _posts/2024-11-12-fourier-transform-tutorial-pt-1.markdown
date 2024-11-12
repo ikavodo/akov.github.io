@@ -181,7 +181,7 @@ Going back now to the original problem we have
 <div>
 $$\sum_{n=-\infty}^{\infty} x[n]  (\int_{-\pi}^{\pi}e^{-j\omega n})d\omega = \sum_{n=-\infty}^{\infty} x[n]  (2\pi\delta[n]) = 2\pi x[0]$$
 </div>
-What have we learned so far? That we can interpret the integral $\int_{-\pi}^{\pi}e^{-j\omega n} d\omega$ as the DTFT operator over the frequency-domain representation $X(e^{jw})=1$, thus yielding the scaled original time-domain sequence $2\pi\delta[n]$. But can we learn something more about the IDTFT thanks to this toy example?
+What have we learned so far? That we can interpret the integral $\int_{-\pi}^{\pi}e^{-j\omega n} d\omega$ as the DTFT operator over the frequency-domain representation $X(e^{jw})=1$, thus yielding the scaled original time-domain sequence $2\pi\delta[n]$. But can we learn something more about the IDTFT using this toy example?
 
 
 ## The time-shift theorem

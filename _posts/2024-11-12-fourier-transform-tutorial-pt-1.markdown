@@ -200,7 +200,9 @@ Meaning we now have a general interpretation of the IDTFT as a time-shifted vers
 $$\int_{-\pi}^{\pi} X(e^{j\omega})e^{j\omega n_0}d\omega=\int_{-\pi}^{\pi} (\sum_{n=-\infty}^{\infty}x[n]e^{-j\omega n})e^{j\omega n_0}d\omega \overset{\text{flip order}}{=} \sum_{n=-\infty}^{\infty} x[n]  (\int_{-\pi}^{\pi}e^{j\omega(n_0-n)})d\omega \\ \overset{\text{time-shift}}{=} 
 \sum_{n=-\infty}^{\infty} x[n]  (2\pi\delta[n_0-n]) = 2\pi x[n_0]$$.
 </div>
-To conclude: Mitra's seemingly innocent problem emphasizes the duality between summation over the time and frequency domain representations, which is an inherent property of the Fourier Transform. Under this interpretation- the IDTFT becomes nothing more than a phase-shifted summation equivalent to "plucking" out the relevant index from the time-domain representation x[n] via a time-shifted unit sequence. 
+
+##Conclusion 
+Mitra's seemingly innocent problem emphasizes the duality between summation over the time and frequency domain representations, which is an inherent property of the Fourier Transform. Under this interpretation- the IDTFT becomes nothing more than a phase-shifted summation equivalent to "plucking" out the relevant index from the time-domain representation x[n] via a time-shifted unit sequence. 
 
 That's it for now!
 

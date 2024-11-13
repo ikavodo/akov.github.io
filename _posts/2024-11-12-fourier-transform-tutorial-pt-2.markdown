@@ -1,7 +1,7 @@
 ---
 title: "The Fourier Transform: pt. 2"
 layout: post
-date: 2024-11-12 20:58
+date: 2024-11-13 16:05
 image: /assets/images/fourier%20transf.png
 headerImage: true
 tags:

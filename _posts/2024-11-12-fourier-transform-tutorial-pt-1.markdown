@@ -1,11 +1,11 @@
 ---
-title: "The Fourier Transform: pt.1"
+title: "The Fourier transform: pt.1"
 layout: post
 date: 2024-11-12 11:58
 image: /assets/images/fourier%20transf.png
 headerImage: true
 tags:
-  - Fourier Transform
+  - Fourier transform
   - DSP
   - Math
 star: true
@@ -15,7 +15,7 @@ description: "Fourier Transform tutorial: pt.1"
 ---
 
 ## Introduction
-If there's one thing the internet is full of (except for [cats](https://www.youtube.com/watch?v=Of2HU3LGdbo&pp=ygUQc2hhcmsgY2F0IHJvb21iYQ%3D%3D)) it's tutorials about the Fourier Transform. Some of these are [really well done](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/), so why should anyone bother to write more blog posts about the topic? \\
+If there's one thing the internet is full of (except for [cats](https://www.youtube.com/watch?v=Of2HU3LGdbo&pp=ygUQc2hhcmsgY2F0IHJvb21iYQ%3D%3D)) it's tutorials about the Fourier transform. Some of these are [really well done](https://betterexplained.com/articles/an-interactive-guide-to-the-fourier-transform/), so why should anyone bother to write more blog posts about the topic? \\
 In my case, the answer is quite selfish: I'm currently studying DSP into depth via Sanjit Mitra's great book ["Digital signal processing: a computer-based approach"](https://www.mathworks.com/academia/books/digital-signal-processing-mitra.html), and I want some vehicle to test my deeper understanding of the underlying concepts, beyond solving the (many) exercises in the book. What better way to do so than by trying to mediate my understanding to an another reader?
 
 ---
@@ -70,7 +70,7 @@ Let's try as an initial step to "open up" each $X(e^{j\omega})$ by representing 
 $$\int_{-\pi}^{\pi} X(e^{j\omega})d\omega=\int_{-\pi}^{\pi} (\sum_{n=-\infty}^{\infty}x[n]e^{-j\omega n})d\omega \overset{\text{flip order}}{=} \sum_{n=-\infty}^{\infty} x[n]  (\int_{-\pi}^{\pi}e^{-j\omega n})d\omega$$.
 </div>
 
-Now let's make some sense of that integral in two different ways, the first 'naive' (with zero-initial knowledge) and the second informed (using Fourier Transform properties).
+Now let's make some sense of that integral in two different ways, the first 'naive' (with zero-initial knowledge) and the second informed (using Fourier transform properties).
 
 ## The naive way
 
@@ -205,7 +205,7 @@ $$\frac{1}{2\pi}\int_{-\pi}^{\pi} X(e^{j\omega})e^{j\omega n_0}d\omega \overset{
 
 ## Conclusion 
 
-Mitra's seemingly innocent problem emphasizes the duality between the time and frequency-domain representations of a signal, which is an inherent property of the Fourier Transform. Under this interpretation- the IDTFT becomes nothing more than a phase-shifted summation equivalent to "plucking" out the relevant index from the time-domain representation x[n] via a time-shifted unit sequence. 
+Mitra's seemingly innocent problem emphasizes the duality between the time and frequency-domain representations of a signal, which is an inherent property of the Fourier transform. Under this interpretation- the IDTFT becomes nothing more than a phase-shifted summation equivalent to "plucking" out the relevant index from the time-domain representation x[n] via a time-shifted unit sequence. 
 
 That's it for now!
 

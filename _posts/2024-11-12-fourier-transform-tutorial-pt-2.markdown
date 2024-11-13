@@ -56,13 +56,13 @@ with a Fourier transform of
    H_{HT}(j\omega)= -j\, \text{sign}(\omega),
    $$ </div>
 
-Intuitively, convolving a real signal x(t) with the Hilbert transformer generates an **analytic**, or complex representation $z[n]$, such that
+We can use the Hilbert transformer to generate an **analytic**, or complex representation $z[n]$, such that
 
    <div> $$ 
    z(t) = x(t) + j*(x(t)\circledast h_{HT}(t)) 
    $$ </div>
 	
-   where $\circledast$ is the convolution operator and j is the imaginary unit. The frequency domain representation of this signal has only positive frequency components, thus halving the overall frequency bandwidth and thus saving precious resources.
+   where $\circledast$ is the convolution operator and j is the imaginary unit. The frequency domain representation of this signal matches that of x[n] in the positive frequency components, whereas it has zero for all negative frequency components, thus halving the overall frequency bandwidth.
 
 
 ## Using the modulation theorem to find the Fourier transform of sinc(t)

@@ -19,7 +19,7 @@ The Fourier convolution theorem[^1] is an extremely important result from the co
 <div>
 $$x[n]h[n]\overset{\text{F}}{\leftrightarrow}\frac{1}{2\pi}\int_{-\pi}^{\pi}X(e^{j\theta})H(e^{j(w-\theta)} d\theta),$$
 </div>
-seems to be less appealing from a computational perspective, and perhaps more domain-specific (ask the telecommunications people or [synthesizer geeks](https://www.youtube.com/watch?v=vvBl3YUBUyY)[^2] about it).
+seems to be less appealing from a computational perspective, and is perhaps more domain-specific (ask the telecommunications people or [synthesizer geeks](https://www.youtube.com/watch?v=vvBl3YUBUyY)[^2] about it).
 This post aims to disprove this notion by showing that the modulation theorem can be used constructively to prove results in DSP, via an example involving an important theoretical tool: the ideal lowpass filter.
 
 ---

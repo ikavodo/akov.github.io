@@ -139,7 +139,7 @@ The resulting sequence is so basic- could there have there an easier way to comp
 
 ## The informed way
 Fourier analysis is generally done by utilizing certain mathematical properties of Fourier transforms, together with some well-known pairs of sequences/functions under such transforms.
-The most basic such pair is $\delta[n]\overset{\text{F}}{\leftrightarrow}1$, which is obvious because 
+The most basic such pair is $\delta[n]\overset{\text{FT}}{\leftrightarrow}1$, which is obvious because 
 <div>
 $$\sum_{n=-\infty}^{\infty} \delta[n] e^{-j\omega n} = e^{-j\omega 0} = 1$$
 </div>

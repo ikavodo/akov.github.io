@@ -46,7 +46,7 @@ What does the time-domain representation of this filter look like? Could we use 
 
 ### Definition
 
-The Hilbert transformer is defined via an impulse response h_{HT} as:
+The Hilbert transformer is defined via an impulse response $h_{HT}$ as:
 
 <div> $$ 
 h_{HT}(t) = \frac{1}{\pi t}, 

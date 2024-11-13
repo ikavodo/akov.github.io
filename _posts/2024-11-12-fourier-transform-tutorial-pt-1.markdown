@@ -31,7 +31,7 @@ $$X(e^{j\omega}) = \sum_{n=-\infty}^{\infty} x[n] e^{-j\omega n}, \quad \omega \
 </div>
 
 Where:
-- We say $x[n]\overset{\text{DTFT}}{\leftrightarrow}X(e^{j\omega})$ constitute a DTFT pair.
+- We say $x[n]\overset{\text{FT}}{\leftrightarrow}X(e^{j\omega})$ constitute a Fourier transform pair.
 - $\omega$ is the angular frequency in radians per sample. Notice $X(e^{j\omega})=X(e^{j(\omega+2\pi)})$ meaning the DTFT is $2\pi$-periodic in $\omega$, so we can take any $2\pi$ wide interval of choice to uniquely describe $X(e^{j\omega})$.
 
 ---
@@ -145,7 +145,7 @@ $$\sum_{n=-\infty}^{\infty} \delta[n] e^{-j\omega n} = e^{-j\omega 0} = 1$$
 </div>
 This can easily be verified via the convolution theorem, which states
 <div>
-$$x[n]\circledast h[n]\overset{\text{F}}{\leftrightarrow}X(e^{jw})H(e^{jw})$$
+$$x[n]\circledast h[n]\overset{\text{FT}}{\leftrightarrow}X(e^{jw})H(e^{jw})$$
 </div>
 Where $x[n]\circledast h[n]=\sum_{k=-\infty}^{\infty} x[k]h[n-k]$ is the convolution operator.
 
@@ -153,7 +153,7 @@ In the case of h[n] = $\delta[n]$, we know it is the identity element for the co
 
 > Note: we can prove the same result by using the modulation theorem
 <div>
-$$x[n]h[n]\overset{\text{F}}{\leftrightarrow}\frac{1}{2\pi}\int_{-\pi}^{\pi}X(e^{j\theta})H(e^{j(w-\theta)} d\theta),$$
+$$x[n]h[n]\overset{\text{FT}}{\leftrightarrow}\frac{1}{2\pi}\int_{-\pi}^{\pi}X(e^{j\theta})H(e^{j(w-\theta)} d\theta),$$
 </div> 
 > where we set $H(e^{jw})=2\pi\delta(e^{jw})$, thus yielding h[n]=1.
 
@@ -161,7 +161,7 @@ $$x[n]h[n]\overset{\text{F}}{\leftrightarrow}\frac{1}{2\pi}\int_{-\pi}^{\pi}X(e^
 ### The duality theorem
 A useful theorem for Fourier transforms defined over the same time/frequency domain (be it continuous or discreet) is the duality theorem, whereby
 <div>
-$$X(t)\overset{\text{F}}{\leftrightarrow}2\pi x(-jw)$$,
+$$X(t)\overset{\text{FT}}{\leftrightarrow}2\pi x(-jw)$$,
 </div>
 meaning we can interpret the frequency-domain representation $X(e^{jw})$ as a time-domain representation and then take the Fourier transform of this- resulting in a scaled, time-reversed version of the time-domain representation (exercise for the reader: what would taking 4 consecutive DTFTs of an initial sequence x[n] result in?). The convolution and modulation theorems also express the notion of duality, in the sense that they are equivalent operators in the two domains.
 While the DTFT is a bit 'problematic' in this scenario (in the sense that the time-domain is discrete whereas the frequency domain is continuous), we can bypass this by using a little trick: let's define 
@@ -174,7 +174,7 @@ and use it to prove the duality theorem for the DTFT.
 <div>
 $$\int_{-\pi}^{\pi} X(e^{j\omega}) e^{-j\omega n} d\omega = 2\pi(\frac{1}{2\pi}\int_{-\pi}^{\pi} X(e^{j\omega}) e^{j\omega(-n)} d\omega) \overset{\text{IDTFT}}{=} 2\pi x[-n]$$
 </div>
-Finally, we can use the DTFT pair $\delta[n]\overset{\text{DTFT}}{\leftrightarrow}1$ to solve the mystery integral
+Finally, we can use the FT pair $\delta[n]\overset{\text{FT}}{\leftrightarrow}1$ to solve the mystery integral
 <div>
 $$\int_{-\pi}^{\pi}e^{-j\omega n} d\omega = 2\pi(\frac{1}{2\pi}\int_{-\pi}^{\pi} 1e^{j\omega(-n)} d\omega) \overset{\text{IDTFT}}{=} 2\pi\delta[-n]\overset{\text{is even}}{=}2\pi\delta[n]$$,
 </div> giving us the same result as previously.
@@ -190,16 +190,16 @@ What have we learned so far? That we can interpret the integral $\int_{-\pi}^{\p
 
 Another theorem relating to Fourier transforms which will prove useful for this purpose is the time-shift theorem 
 <div>
-$$g[n-n_0]\overset{\text{F}}{\leftrightarrow}e^{-j\omega n_o}X(e^{j\omega})$$,
+$$g[n-n_0]\overset{\text{FT}}{\leftrightarrow}e^{-j\omega n_o}X(e^{j\omega})$$,
 </div>
 
 which intuitively establishes a relationship between a time-shift in the time-domain and a phase-shift in the frequency domain. We can use this theorem to verify that 
 <div>
-$$\delta[n-n_0]\overset{\text{F}}{\leftrightarrow}e^{-j\omega n_0}*1=e^{-j\omega n_0}$$,
+$$\delta[n-n_0]\overset{\text{FT}}{\leftrightarrow}e^{-j\omega n_0}*1=e^{-j\omega n_0}$$,
 </div>
 Meaning we now have a general interpretation of the IDTFT as a time-shifted version of the original problem
 <div>
-$$\frac{1}{2\pi}\int_{-\pi}^{\pi} X(e^{j\omega})e^{j\omega n_0}d\omega \overset{\text{DTFT}}{=} \frac{1}{2\pi}\int_{-\pi}^{\pi} (\sum_{n=-\infty}^{\infty}x[n]e^{-j\omega n})e^{j\omega n_0}d\omega \overset{\text{flip order}}{=} \frac{1}{2\pi}\sum_{n=-\infty}^{\infty} x[n]  (\int_{-\pi}^{\pi}e^{j\omega(n_0-n)})d\omega \\ \overset{\text{time-shift}}{=} 
+$$\frac{1}{2\pi}\int_{-\pi}^{\pi} X(e^{j\omega})e^{j\omega n_0}d\omega \overset{\text{FT}}{=} \frac{1}{2\pi}\int_{-\pi}^{\pi} (\sum_{n=-\infty}^{\infty}x[n]e^{-j\omega n})e^{j\omega n_0}d\omega \overset{\text{flip order}}{=} \frac{1}{2\pi}\sum_{n=-\infty}^{\infty} x[n]  (\int_{-\pi}^{\pi}e^{j\omega(n_0-n)})d\omega \\ \overset{\text{time-shift}}{=} 
 \frac{1}{2\pi}\sum_{n=-\infty}^{\infty} x[n]  (2\pi\delta[n_0-n]) = x[n_0]$$.
 </div>
 

@@ -62,7 +62,7 @@ We can use the Hilbert transformer to generate an **analytic**, or complex repre
    z(t) = x(t) + j*(x(t)\circledast h_{HT}(t)) 
    $$ </div>
 	
-   where $\circledast$ is the convolution operator and j is the imaginary unit. The frequency domain representation of this signal matches that of x[n] in the positive frequency components, whereas it has zero for all negative frequency components, thus halving the overall frequency bandwidth.
+   where $\circledast$ is the convolution operator and j is the imaginary unit. The frequency domain representation of this signal retains the positive frequency components of x[n], while setting all negative frequency components to zero. This effectively halves the frequency bandwidth, enabling transmission over a narrower band..
 
 
 ## Using the modulation theorem to find the Fourier transform of sinc(t)

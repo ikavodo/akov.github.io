@@ -39,7 +39,7 @@ $$H_{LP}(j\omega) = \begin{cases}
    \end{cases}$$
 </div>
 
-Where we suppose for now that the cutoff frequency is unity, meaning $\omega_c=1$.
+Where we suppose for now that the cutoff frequency is unity, meaning $\omega_c=1$. \\
 What does the time-domain representation of this filter look like? Could we use it to implement lowpass filtering by convolution in the time-domain? In order to answer these question we will make use of another important concept in DSP: the Hilbert transformer.
 
 ## Hilbert transformer

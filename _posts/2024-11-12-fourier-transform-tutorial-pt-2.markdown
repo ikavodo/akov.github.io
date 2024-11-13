@@ -130,4 +130,4 @@ That's it for now!
 ### Footnotes 
 
 [^1]: see [previous post](https://ikavodo.github.io/fourier-transform-tutorial-pt-1/)
-[^2]: FM-modulation actually lies behind radio technology and FM synthesis- a technique which led to the development of the best-selling Yamaha DX7 synthesizer. This synth is responsible for LOTS of funky sounds you might recognize from [80's pop](https://www.youtube.com/watch?v=djV11Xbc914&list=PLsAmsnfaNA4-CevYq1hrcD_aIP5xWe9Xr).
+[^2]: FM-modulation actually lies behind radio technology and FM synthesis- a technique which led to the development of the best-selling Yamaha DX7 synthesizer. This synth is responsible for **Lots** of funky sounds you might recognize from [80's pop](https://www.youtube.com/watch?v=djV11Xbc914&list=PLsAmsnfaNA4-CevYq1hrcD_aIP5xWe9Xr).

@@ -163,7 +163,7 @@ A useful theorem for Fourier transforms defined over the same time/frequency dom
 <div>
 $$X(t)\overset{\text{FT}}{\leftrightarrow}2\pi x(-jw)$$,
 </div>
-meaning we can interpret the frequency-domain representation $X(e^{jw})$ as a time-domain representation and then take the Fourier transform of this- resulting in a scaled, time-reversed version of the time-domain representation (exercise for the reader: what would taking 4 consecutive DTFTs of an initial sequence x[n] result in?). The convolution and modulation theorems also express the notion of duality, in the sense that they are equivalent operators in the two domains.
+meaning we can interpret the frequency-domain representation $X(e^{jw})$ as a time-domain representation and then take the Fourier transform of this, resulting in a scaled and time-reversed version of the time-domain representation (exercise for the reader: what would taking 4 consecutive DTFTs of an initial sequence x[n] result in?). The convolution and modulation theorems also express the notion of duality, in the sense that they are equivalent operators in the two domains.
 While the DTFT is a bit 'problematic' in this scenario (in the sense that the time-domain is discrete whereas the frequency domain is continuous), we can bypass this by using a little trick: let's define 
 
 <div>
@@ -183,7 +183,7 @@ Going back now to the original problem we have once more
 <div>
 $$\sum_{n=-\infty}^{\infty} x[n]  (\int_{-\pi}^{\pi}e^{-j\omega n})d\omega = \sum_{n=-\infty}^{\infty} x[n]  (2\pi\delta[n]) = 2\pi x[0]$$
 </div>
-What have we learned so far? That we can interpret the integral $\int_{-\pi}^{\pi}e^{-j\omega n} d\omega$ as the DTFT operator over the frequency-domain representation $X(e^{jw})=1$, thus yielding the scaled, original time-domain sequence $2\pi\delta[n]$. But can we learn something more about the IDTFT using this toy example?
+What have we learned so far? That we can interpret the integral $\int_{-\pi}^{\pi}e^{-j\omega n} d\omega$ as the DTFT operator over the frequency-domain representation $X(e^{jw})=1$, thus yielding the scaled original time-domain sequence $2\pi\delta[n]$. But can we learn something more about the IDTFT using this toy example?
 
 
 ## The time-shift theorem

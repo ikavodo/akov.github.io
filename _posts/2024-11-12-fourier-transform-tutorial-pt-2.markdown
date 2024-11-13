@@ -62,7 +62,7 @@ We can use the Hilbert transformer to generate an **analytic**, or complex repre
    z(t) = x(t) + j*(x(t)\circledast h_{HT}(t)) 
    $$ </div>
 	
-   where $\circledast$ is the convolution operator and j is the imaginary unit. The frequency domain representation of this signal retains the positive frequency components of x[n], while setting all negative frequency components to zero. This effectively halves the frequency bandwidth, enabling transmission over a narrower band..
+   where $\circledast$ is the convolution operator and j is the imaginary unit. The frequency domain representation of this signal retains the positive frequency components of x[n], while setting all negative frequency components to zero. This effectively halves the frequency bandwidth, enabling transmission over a narrower band.
 
 
 ## Using the modulation theorem to find the Fourier transform of sinc(t)
@@ -76,14 +76,14 @@ For this purpose we will multiply it by a scalar $\frac{1}{\pi}$ to obtain
 	\frac{sinc(t)}{\pi} =\frac{\sin{t}}{\pi t}
    $$ </div>
 
- Does the denominator of this function now look familiar? Let's first find the Fourier transform of the numerator in order to use the modulation theorem!
+ Does the denominator of this function now look familiar? Let's first find the Fourier transform of the numerator in order to use the modulation theorem.
    <div> $$ 
 	F\{\sin{t}\}= \int_{-\infty}^{\infty} sin(t)e^{-j\omega t}dt = \frac{1}{2j}\int_{-\infty}^{\infty} (e^{jt}-e^{-jt})e^{-j\omega t}dt \\ \overset{lin.}{=} \frac{1}{2j}(\int_{-\infty}^{\infty}e^{-j(\omega-1)t}dt - \int_{-\infty}^{\infty}e^{-j(\omega+1)t}dt) 
 \overset{time-shift}{=} \frac{\pi(\delta(\omega-1) - \delta(\omega+1))}{j} \\
 \overset{\omega_c=1}{=} \frac{\pi(\delta(\omega-\omega_c) - \delta(\omega+\omega_c))}{j}
    $$ </div>
 Where $\delta(t)$ is the [Dirac delta function](https://en.wikipedia.org/wiki/Dirac_delta_function). \\
-Now it's time to use the modulation theorem:
+Now we can finally use the modulation theorem:
 <div> $$ 
 	\frac{\sin{t}}{\pi t} = \sin{t}* \frac{1}{\pi t}\overset{F}{\leftrightarrow} \frac{\pi}{2\pi j}\int_{-\pi}^{\pi} (\delta(\theta-\omega_c) - \delta(\theta-\omega_c))H_{HT}(j(\omega-\theta))d\theta \\ 
 = \frac{1}{2j}(H_{HT}(j(\omega-\omega_c))-H_{HT}(j(\omega+\omega_c))).
@@ -97,13 +97,13 @@ $$
 \end{cases}
    $$ </div>
 and respectively evaluate our intermediate result.
-In case 1 we get 
+In the first case we have
 <div>
 $$
 H_{HT}(j(\omega-\omega_c)) = j, \, H_{HT}(j(\omega+\omega_c)) = -j \implies\\ 
 \frac{1}{2j}(H_{HT}(j(\omega-\omega_c))-H_{HT}(j(\omega+\omega_c))) = \frac{2j}{2j} = 1.
    $$ </div>
-Whereas in case 2 we have
+Whereas in the second
 <div>
 $$
 H_{HT}(j(\omega-\omega_c)) = j, \, H_{HT}(j(\omega+\omega_c)) = j \implies\\ 

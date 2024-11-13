@@ -35,11 +35,11 @@ The frequency response of an ideal lowpass filter, $H_{LP}(j\omega)$, is defined
 <div>
 $$H_{LP}(j\omega) = \begin{cases} 
       1, & |\omega| \leq \omega_c \\
-      0, & |\omega| > \omega_c 
+      0, & |\omega| > \omega_c, 
    \end{cases}$$
 </div>
 
-This response means that all frequencies $|\omega|<=\omega_c$ are passed with a gain of 1, while frequencies $|\omega|>\omega_c$ are completely blocked. Let's use for now a unit cutoff frequency of $\omega_c=1$.
+Where we suppose for now that the cutoff frequency is unity, meaning $\omega_c=1$.
 What does the time-domain representation of this filter look like? Could we use it to implement lowpass filtering by convolution in the time-domain? In order to answer these question we will make use of another important concept in DSP: the Hilbert transformer.
 
 ## Hilbert transformer

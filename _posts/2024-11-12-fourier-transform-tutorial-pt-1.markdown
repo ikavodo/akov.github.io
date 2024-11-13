@@ -67,7 +67,7 @@ $$\int_{-\pi}^{\pi} X(e^{j\omega})d\omega=2\pi(\frac{1}{2\pi}\int_{-\pi}^{\pi} X
 But can we perhaps choose to look at the problem differently, and make some sense of it in a different, more meaningful way?
 Let's try as an initial step to "open up" each $X(e^{j\omega})$ by representing it via the DTFT operation over x[n]
 <div>
-$$\int_{-\pi}^{\pi} X(e^{j\omega})d\omega=\int_{-\pi}^{\pi} (\sum_{n=-\infty}^{\infty}x[n]e^{-j\omega n})d\omega \overset{\text{flip order}}{=} \sum_{n=-\infty}^{\infty} x[n]  (\int_{-\pi}^{\pi}e^{-j\omega n})d\omega$$.
+$$\int_{-\pi}^{\pi} X(e^{j\omega})d\omega \overset{\text{DTFT}}{=} \int_{-\pi}^{\pi} (\sum_{n=-\infty}^{\infty}x[n]e^{-j\omega n})d\omega \overset{\text{flip order}}{=} \sum_{n=-\infty}^{\infty} x[n]  (\int_{-\pi}^{\pi}e^{-j\omega n})d\omega$$.
 </div>
 
 Now let's make some sense of that integral in two different ways, the first 'naive' (with zero-initial knowledge) and the second informed (using Fourier transform properties).
@@ -199,7 +199,7 @@ $$\delta[n-n_0]\overset{\text{FT}}{\leftrightarrow}e^{-j\omega n_0}*1=e^{-j\omeg
 </div>
 Meaning we now have a general interpretation of the IDTFT as a time-shifted version of the original problem
 <div>
-$$\frac{1}{2\pi}\int_{-\pi}^{\pi} X(e^{j\omega})e^{j\omega n_0}d\omega \overset{\text{FT}}{=} \frac{1}{2\pi}\int_{-\pi}^{\pi} (\sum_{n=-\infty}^{\infty}x[n]e^{-j\omega n})e^{j\omega n_0}d\omega \overset{\text{flip order}}{=} \frac{1}{2\pi}\sum_{n=-\infty}^{\infty} x[n]  (\int_{-\pi}^{\pi}e^{j\omega(n_0-n)})d\omega \\ \overset{\text{time-shift}}{=} 
+$$\frac{1}{2\pi}\int_{-\pi}^{\pi} X(e^{j\omega})e^{j\omega n_0}d\omega \overset{\text{DTFT}}{=} \frac{1}{2\pi}\int_{-\pi}^{\pi} (\sum_{n=-\infty}^{\infty}x[n]e^{-j\omega n})e^{j\omega n_0}d\omega \overset{\text{flip order}}{=} \frac{1}{2\pi}\sum_{n=-\infty}^{\infty} x[n]  (\int_{-\pi}^{\pi}e^{j\omega(n_0-n)})d\omega \\ \overset{\text{time-shift}}{=} 
 \frac{1}{2\pi}\sum_{n=-\infty}^{\infty} x[n]  (2\pi\delta[n_0-n]) = x[n_0]$$.
 </div>
 

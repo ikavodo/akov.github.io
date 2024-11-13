@@ -17,7 +17,7 @@ description: "Fourier Transform tutorial: pt. 2"
 ## Introduction
 The Fourier convolution theorem[^1] is an extremely important result from the computational perspective, as with a sufficiently fast algorithm ([FFT](https://en.wikipedia.org/wiki/Fast_Fourier_transform)) the order of computational complexity of a convolution operation drops from $O(n^2)$ to $O(n\log n$) (read [this](https://en.wikipedia.org/wiki/Big_O_notation) if you have no idea what I'm talking about). This means that implementing a convolution as a multiplication in the frequency domain is significantly faster than computing it in the time-domain (for sufficiently large $n>N$). On the other hand, the modulation theorem (which is the dual of the previously mentioned convolution theorem) defined as 
 <div>
-$$x[n]h[n]\overset{\text{F}}{\leftrightarrow}\frac{1}{2\pi}\int_{-\pi}^{\pi}X(e^{j\theta})H(e^{j(w-\theta)} d\theta),$$
+$$x[n]h[n]\overset{\text{FT}}{\leftrightarrow}\frac{1}{2\pi}\int_{-\pi}^{\pi}X(e^{j\theta})H(e^{j(w-\theta)} d\theta),$$
 </div>
 seems to be less appealing from a computational perspective, and is perhaps more domain-specific (ask the telecommunications people or [synthesizer geeks](https://www.youtube.com/watch?v=vvBl3YUBUyY)[^2] about it).
 This post aims to disprove this notion by showing that the modulation theorem can be used constructively to prove results in DSP, via an example involving an important theoretical tool: the ideal lowpass filter.

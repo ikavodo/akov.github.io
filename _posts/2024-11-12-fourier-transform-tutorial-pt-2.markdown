@@ -122,7 +122,7 @@ $$
 = H_{LP}
    $$ </div>
 
-Meaning we have proven that the unnormalized sinc function and ideal low-pass filter constitute a Fourier transform pair (up to a scalar $\frac{1}{\pi}).
+Meaning we have proven that the unnormalized sinc function and ideal low-pass filter constitute a Fourier transform pair (up to a scalar $\frac{1}{\pi}$).
 One of the consequences of this fact is that the we are unable to implement an ideal-lowpass filter in the time domain, as the sinc function extends infinitely in each direction. This means we must find finite (and hopefully causal) approximations of the ideal low-pass via other kinds of filters for lowpass filtering in the time domain...
 That's it for now!
 

@@ -14,4 +14,4 @@ description: "Audio-denoising network"
 projects: true  # This is necessary for the post to show up in the projects list
 --- 
 
-See my [github-repository](https://github.com/ikavodo/audio_denoising)
+See the [github-repository](https://github.com/ikavodo/audio_denoising) for a tool to denoise audio recordings.

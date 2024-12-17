@@ -1,5 +1,5 @@
 ---
-title: "Audio-denoising network"
+title: "Audio denoising network"
 layout: post
 date: 2024-12-17 16:38
 image: /assets/images/UNet.jpeg

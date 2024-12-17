@@ -7,8 +7,7 @@ headerImage: true
 tags:
   - Contemporary classical music
   - Bach
-  - Field recording
-  - war
+  - War
 star: true
 category: blog
 author: Ido Akov
